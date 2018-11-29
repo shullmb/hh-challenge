@@ -1,32 +1,34 @@
+// Variables
+$helpfulGrayDark: #353C3C;
+$helpfulGrayLight: #D5D8D7;
+$helpfulOffWhite: #FEFFFE;
+
+// App Styles
 .App {
-  text-align: center;
+  min-height:100vh;
+  min-width: 100vw;
+  display: grid;
+  grid-template-columns: 18em 1fr;
+  grid-template-rows: 4em 1fr;
+  grid-template-areas: "navbar navbar"
+                       "sidebar main";
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+header { 
+  grid-area: navbar;
+  background-color: $helpfulGrayDark;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 1em;
 }
 
-.App-link {
-  color: #61dafb;
+aside {
+  grid-area: sidebar;
+  background-color: $helpfulGrayLight;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+main {
+  grid-area: main;
+  background-color: $helpfulOffWhite;
 }
+
