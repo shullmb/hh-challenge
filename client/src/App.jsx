@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import logo from './assets/logo-symbol.svg';
+import CatalogContainer from './components/CatalogContainer';
 
 
 class App extends Component {
@@ -23,8 +24,10 @@ class App extends Component {
         <header>
           <img src={logo} className="App-logo" alt="logo" />
         </header>
-        <aside><p>tes</p></aside>
-        <main></main>
+        <aside></aside>
+        <main>
+          <CatalogContainer swatches={this.state.swatches} />
+        </main>
       </div>
     );
   }

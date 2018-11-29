@@ -1,0 +1,12 @@
+.CatalogContainer {
+  padding: 4em;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-gap: 1em;
+  
+}
+
+.swatch {
+  border: 2px solid white;
+}
