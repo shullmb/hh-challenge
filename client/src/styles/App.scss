@@ -44,3 +44,20 @@ main {
   background-color: $helpfulOffWhite;
 }
 
+button {
+  padding: 1em;
+  display: block;
+  width: 80%;
+  margin: 4em auto;
+  background-color: $helpfulOffWhite;
+  border: 2px solid $helpfulGrayDark;
+  border-radius: 5px;
+  text-decoration: none;
+  &:hover, &:active {
+    border-color: $helpfulGrayMed;
+  };
+  &:focus {
+    outline: 0;
+  }
+}
+
