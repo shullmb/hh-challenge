@@ -11,13 +11,20 @@
   background-color: $helpfulOffWhite;
   border:1px solid $helpfulGrayDark;
   border-radius: 5px;
-  p {
-    padding: 0 1em;
-  }
+  display: grid;
+  grid-auto-rows: 7fr 3fr;
 }
 
-.swatch {
+.SwatchColorBlock {
   border-radius: 5px 5px 0 0;
-  height: auto;
+  min-height: 4em;
+  max-height: 100%; 
   padding: 1em;
+}
+
+.SwatchTextBlock {
+  p {
+    font-size: inherit;
+    padding: 0 1em;
+  }
 }

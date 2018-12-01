@@ -7,6 +7,12 @@
                        "ShadeSwatches";
 }
 
-#DetailSwatch, #ShadeSwatches {
+#DetailSwatch {
   padding: 4em 10em;
+}
+
+#ShadeSwatches {
+  padding: 4em 10em;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr)
 }

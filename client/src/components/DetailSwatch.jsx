@@ -4,7 +4,7 @@ import Swatch from './Swatch'
 const DetailSwatch = ({ swatch }) => {
   return (
     <div id="DetailSwatch">
-      <Swatch swatch={swatch} />      
+      <Swatch swatch={swatch} handleClick={() => console.log('back to Catalog View')}/>      
     </div>
   )
 }

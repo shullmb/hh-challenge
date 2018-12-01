@@ -11,12 +11,18 @@ class App extends Component {
       swatches: [],
       currentSwatch: {r: 10, g:10, b: 200}
     }
+    this.handleSwatchSelect = this.handleSwatchSelect.bind(this);
   }
 
   componentDidMount() {
     fetch('/api/v1/swatches')
       .then( res => res.json())
       .then( swatches => this.setState({swatches}))
+  }
+
+  handleSwatchSelect(currentSwatch) {
+    console.log(currentSwatch)
+    this.setState({currentSwatch})
   }
 
   render() {
@@ -26,8 +32,8 @@ class App extends Component {
           <img src={logo} className="logo" alt="logo" />
         </header>
         <main>
-          {this.state.swatches.length ? <CatalogContainer swatches={this.state.swatches} /> : <h3>Loading swatches</h3>}
-          {/* {this.state.swatches.length ? <DetailContainer swatch={this.state.currentSwatch} /> : <h3>Loading swatch</h3>} */}
+          {this.state.swatches.length ? <CatalogContainer swatches={this.state.swatches} handleSwatchSelect={this.handleSwatchSelect}/> : <h3>Loading swatches</h3>}
+          <DetailContainer swatch={this.state.currentSwatch} handleSwatchSelect={this.handleSwatchSelect}/> 
         </main>
         <aside></aside>
       </div>
