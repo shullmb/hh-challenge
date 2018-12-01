@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './assets/logo-symbol.svg';
 import CatalogContainer from './components/CatalogContainer';
 import DetailContainer from './components/DetailContainer';
+import Loading from './components/Loading';
 
 
 class App extends Component {
@@ -9,9 +10,10 @@ class App extends Component {
     super(props)
     this.state = {
       swatches: [],
-      currentSwatch: {r: 10, g:10, b: 200}
+      currentSwatch: null,
     }
     this.handleSwatchSelect = this.handleSwatchSelect.bind(this);
+    this.backToCatalog = this.backToCatalog.bind(this);
   }
 
   componentDidMount() {
@@ -21,19 +23,25 @@ class App extends Component {
   }
 
   handleSwatchSelect(currentSwatch) {
-    console.log(currentSwatch)
     this.setState({currentSwatch})
   }
 
+  backToCatalog() {
+    this.setState({currentSwatch: null})
+  }
+
   render() {
+    const swatches = this.state.swatches;
+    const catalogView = swatches.length ? <CatalogContainer swatches={this.state.swatches} handleSwatchSelect={this.handleSwatchSelect} /> : <Loading />;
+    const detailView = <DetailContainer swatch={this.state.currentSwatch} backToCatalog={this.backToCatalog} /> 
+
     return (
       <div className="App">
         <header>
-          <img src={logo} className="logo" alt="logo" />
+          <img src={logo} className="logo" alt="logo" onClick={this.backToCatalog}/>
         </header>
         <main>
-          {this.state.swatches.length ? <CatalogContainer swatches={this.state.swatches} handleSwatchSelect={this.handleSwatchSelect}/> : <h3>Loading swatches</h3>}
-          <DetailContainer swatch={this.state.currentSwatch} handleSwatchSelect={this.handleSwatchSelect}/> 
+          { !this.state.currentSwatch ? catalogView : detailView }
         </main>
         <aside></aside>
       </div>
