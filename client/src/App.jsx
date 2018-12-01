@@ -3,6 +3,7 @@ import logo from './assets/logo-symbol.svg';
 import CatalogContainer from './components/CatalogContainer';
 import DetailContainer from './components/DetailContainer';
 import Loading from './components/Loading';
+import Button from './components/Button';
 
 
 class App extends Component {
@@ -13,6 +14,7 @@ class App extends Component {
       currentSwatch: null,
     }
     this.handleSwatchSelect = this.handleSwatchSelect.bind(this);
+    this.selectRandomSwatch = this.selectRandomSwatch.bind(this);
     this.backToCatalog = this.backToCatalog.bind(this);
   }
 
@@ -24,6 +26,11 @@ class App extends Component {
 
   handleSwatchSelect(currentSwatch) {
     this.setState({currentSwatch})
+  }
+
+  selectRandomSwatch() {
+    let index = Math.floor(Math.random() * this.state.swatches.length)
+    this.setState({currentSwatch: this.state.swatches[index]})
   }
 
   backToCatalog() {
@@ -43,7 +50,7 @@ class App extends Component {
         <main>
           { !this.state.currentSwatch ? catalogView : detailView }
         </main>
-        <aside></aside>
+        <aside><Button name={'Random Color'} onClick={this.selectRandomSwatch}/></aside>
       </div>
     );
   }
