@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './assets/logo-symbol.svg';
 import CatalogContainer from './components/CatalogContainer';
+import DetailContainer from './components/DetailContainer';
 
 
 class App extends Component {
@@ -8,7 +9,7 @@ class App extends Component {
     super(props)
     this.state = {
       swatches: [],
-      currentSwatch: null
+      currentSwatch: {r: 10, g:10, b: 200}
     }
   }
 
@@ -26,6 +27,7 @@ class App extends Component {
         </header>
         <main>
           {this.state.swatches.length ? <CatalogContainer swatches={this.state.swatches} /> : <h3>Loading swatches</h3>}
+          {/* {this.state.swatches.length ? <DetailContainer swatch={this.state.currentSwatch} /> : <h3>Loading swatch</h3>} */}
         </main>
         <aside></aside>
       </div>

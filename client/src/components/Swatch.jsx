@@ -4,12 +4,14 @@ import React from 'react';
 const Swatch = ({swatch}) => {
   let hexValue = rgbToHex(swatch);
   return (
-    <div class="SwatchContainer">
+    <div className="SwatchContainer">
       <div className="swatch" style={{ backgroundColor: hexValue }}>
       </div>
-      <p>
-        {hexValue}
-      </p>
+      <div>
+        <p>
+          {hexValue}
+        </p>
+      </div>
     </div>
   )
 }

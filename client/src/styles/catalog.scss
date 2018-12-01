@@ -7,6 +7,7 @@
 }
 
 .SwatchContainer {
+  height: 100%;
   background-color: $helpfulOffWhite;
   border:1px solid $helpfulGrayDark;
   border-radius: 5px;
@@ -17,6 +18,6 @@
 
 .swatch {
   border-radius: 5px 5px 0 0;
-  height: 8em;
+  height: auto;
   padding: 1em;
 }

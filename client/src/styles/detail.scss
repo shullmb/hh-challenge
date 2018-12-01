@@ -1,0 +1,12 @@
+#DetailContainer {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 0.7fr 10em;
+  grid-template-areas: "DetailSwatch"
+                       "ShadeSwatches";
+}
+
+#DetailSwatch, #ShadeSwatches {
+  padding: 4em 10em;
+}
