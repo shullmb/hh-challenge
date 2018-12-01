@@ -1,12 +1,23 @@
 .CatalogContainer {
-  padding: 4em;
+  padding: 4em 12em;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(3, 1fr);
-  grid-gap: 1em;
+  grid-gap: 4em;
   
 }
 
+.SwatchContainer {
+  background-color: $helpfulOffWhite;
+  border:1px solid $helpfulGrayDark;
+  border-radius: 5px;
+  p {
+    padding: 0 1em;
+  }
+}
+
 .swatch {
-  border: 2px solid white;
+  border-radius: 5px 5px 0 0;
+  height: 8em;
+  padding: 1em;
 }

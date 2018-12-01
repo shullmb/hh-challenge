@@ -13,7 +13,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    fetch('/api/swatches')
+    fetch('/api/v1/swatches')
       .then( res => res.json())
       .then( swatches => this.setState({swatches}))
   }
@@ -22,11 +22,11 @@ class App extends Component {
     return (
       <div className="App">
         <header>
-          <img src={logo} className="App-logo" alt="logo" />
+          <img src={logo} className="logo" alt="logo" />
         </header>
         <aside></aside>
         <main>
-          <CatalogContainer swatches={this.state.swatches} />
+          {this.state.swatches.length ? <CatalogContainer swatches={this.state.swatches} /> : <h3>Loading swatches</h3>}
         </main>
       </div>
     );

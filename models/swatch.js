@@ -14,6 +14,8 @@ const swatchSchema = new Schema({
 		type: Number,
 		required: true
 	}
+},{
+	versionKey: false
 })
 
 module.exports = mongoose.model('Swatch', swatchSchema);
