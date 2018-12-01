@@ -24,10 +24,10 @@ class App extends Component {
         <header>
           <img src={logo} className="logo" alt="logo" />
         </header>
-        <aside></aside>
         <main>
           {this.state.swatches.length ? <CatalogContainer swatches={this.state.swatches} /> : <h3>Loading swatches</h3>}
         </main>
+        <aside></aside>
       </div>
     );
   }

@@ -1,5 +1,6 @@
 // Variables
 $helpfulGrayDark: #353C3C;
+$helpfulGrayMed: #B4B5B4;
 $helpfulGrayLight: #D5D8D7;
 $helpfulOffWhite: #FEFFFE;
 
@@ -33,6 +34,9 @@ header {
 aside {
   grid-area: sidebar;
   background-color: $helpfulGrayLight;
+  border-right: 1px solid $helpfulGrayMed;
+  border-left: 1px solid $helpfulGrayMed;
+  box-shadow: 2px 0 4px $helpfulGrayLight;
 }
 
 main {
