@@ -2,7 +2,7 @@ require('dotenv').config() // for dev db seeding
 const mongoose = require('mongoose');
 const Swatch = require('../models/swatch');
 
-mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true });
+mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true });
 
 Swatch.deleteMany({}, (err) => err ? console.log(err) : 'Collection removed')
 
