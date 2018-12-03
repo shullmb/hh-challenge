@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import logo from './assets/logo-symbol.svg';
-import CatalogContainer from './components/CatalogContainer';
+import ListView from './components/ListView';
 import DetailContainer from './components/DetailContainer';
 import Loading from './components/Loading';
 import Button from './components/Button';
@@ -45,7 +45,7 @@ class App extends Component {
 
   render() {
     const swatches = this.state.swatches;
-    const catalogView = swatches.length ? <CatalogContainer swatches={this.state.swatches} 
+    const catalogView = swatches.length ? <ListView swatches={this.state.swatches} 
                                             currentPage={this.state.pageNumber} 
                                             handleSwatchSelect={this.handleSwatchSelect} 
                                             selectPageNumber={this.selectPageNumber } 

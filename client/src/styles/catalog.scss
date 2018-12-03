@@ -6,36 +6,17 @@
   grid-gap: 4em;
 }
 
-.SwatchContainer {
-  height: 100%;
-  background-color: $helpfulOffWhite;
-  border:1px solid $helpfulOffWhite;
-  border-radius: 5px;
-  box-shadow: 0px 2px 4px 1px $helpfulGrayLight;
-  display: grid;
-  grid-auto-rows: 8fr 2fr;
-}
-
-.SwatchColorBlock {
-  border-radius: 5px 5px 0 0;
-  min-height: 4em;
-  max-height: 100%; 
-  padding: 1em;
-}
-
-.SwatchTextBlock {
-  display: flex;
-  align-items: center;
-  p {
-    font-size: inherit;
-    padding: 0 1em;
-  }
-}
-
-#PageNumberContainer {
+.PageNumberContainer {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.PageNumbers {
+  p {
+    display: inline-block;
+    padding: 1em;
+  }
 }
 
 .ActivePage {

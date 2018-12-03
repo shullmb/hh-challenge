@@ -7,12 +7,12 @@ const PageNumbers = ({numOfPages, currentPage, selectPageNumber}) => {
   }
 
   return (
-    <nav>
+    <div className="PageNumbers">
         {pageNumbers.map( num => {
           let numClass = num === currentPage ? 'ActivePage' : ''; 
           return <p key={`page${num}`} className={numClass} onClick={() => selectPageNumber(num)}> {num} </p>
         })}
-    </nav>
+    </div>
   )
 }
 
