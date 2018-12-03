@@ -31,3 +31,14 @@
     padding: 0 1em;
   }
 }
+
+#PageNumberContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ActivePage {
+  font-weight: bold;
+  text-decoration: underline;
+}
