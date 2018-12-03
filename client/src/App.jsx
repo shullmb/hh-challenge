@@ -12,9 +12,11 @@ class App extends Component {
     this.state = {
       swatches: [],
       currentSwatch: null,
+      pageNumber: 1,
     }
     this.handleSwatchSelect = this.handleSwatchSelect.bind(this);
     this.selectRandomSwatch = this.selectRandomSwatch.bind(this);
+    this.selectPageNumber = this.selectPageNumber.bind(this);
     this.backToCatalog = this.backToCatalog.bind(this);
   }
 
@@ -33,13 +35,21 @@ class App extends Component {
     this.setState({currentSwatch: this.state.swatches[index]})
   }
 
+  selectPageNumber(pageNumber) {
+    this.setState({pageNumber})
+  }
+ 
   backToCatalog() {
     this.setState({currentSwatch: null})
   }
 
   render() {
     const swatches = this.state.swatches;
-    const catalogView = swatches.length ? <CatalogContainer swatches={this.state.swatches} handleSwatchSelect={this.handleSwatchSelect} /> : <Loading />;
+    const catalogView = swatches.length ? <CatalogContainer swatches={this.state.swatches} 
+                                            currentPage={this.state.pageNumber} 
+                                            handleSwatchSelect={this.handleSwatchSelect} 
+                                            selectPageNumber={this.selectPageNumber } 
+                                          /> : <Loading />;
     const detailView = <DetailContainer swatch={this.state.currentSwatch} backToCatalog={this.backToCatalog} /> 
 
     return (

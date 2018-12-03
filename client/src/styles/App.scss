@@ -9,20 +9,6 @@ body {
   font-family: 'Source Serif Pro', Georgia, 'Times New Roman', Times, serif;
 }
 
-.App {
-  min-height:100vh;
-  min-width: 100vw;
-  display: grid;
-  grid-template-columns: 18em 1fr;
-  grid-template-rows: 4em 1fr;
-  grid-template-areas: "navbar navbar"
-                       "sidebar main";
-}
-
-.logo {
-  height: 100%
-}
-
 header { 
   grid-area: navbar;
   background-color: $helpfulGrayDark;
@@ -58,5 +44,26 @@ button {
   &:focus {
     outline: 0;
   }
+}
+
+nav {
+  li {
+    display: inline-block;
+    padding: auto 1em;
+  }
+}
+
+.App {
+  min-height:100vh;
+  min-width: 100vw;
+  display: grid;
+  grid-template-columns: 18em 1fr;
+  grid-template-rows: 4em 1fr;
+  grid-template-areas: "navbar navbar"
+                       "sidebar main";
+}
+
+.logo {
+  height: 100%
 }
 
