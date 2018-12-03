@@ -1,10 +1,10 @@
 import React from 'react';
 import Swatch from './Swatch'
 
-const DetailSwatch = ({ swatch, backToCatalog }) => {
+const DetailSwatch = ({ swatch }) => {
   return (
     <div id="DetailSwatch">
-      <Swatch swatch={swatch} handleClick={backToCatalog}/>      
+      <Swatch swatch={swatch} />      
     </div>
   )
 }

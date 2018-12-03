@@ -1,10 +1,10 @@
 import React from 'react';
 
 
-const Swatch = props => {
-  let hexValue = rgbToHex(props.swatch);
+const Swatch = ({ swatch, handleClick }) => {
+  let hexValue = rgbToHex(swatch);
   return (
-    <div className="SwatchContainer" onClick={props.handleClick}>
+    <div className="SwatchContainer" onClick={handleClick}>
       <div className="SwatchColorBlock" style={{ backgroundColor: hexValue }}>
       </div>
       <div className="SwatchTextBlock">

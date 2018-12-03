@@ -1,8 +1,8 @@
 import React from 'react';
 import Swatch from './Swatch';
 
-const ShadeSwatches = ({ swatch, handleSwatchSelect }) => {
-  const shadeRatios = [ (1/4), (1/2), (3/4), (6/5)]
+const ShadeSwatches = ({ swatch }) => {
+  const shadeRatios = [ 1/5, 3/5, 4/5, 6/5 ]
   let shades = shadeRatios.map( ratio => {
     return {
       r: calculateShade(swatch.r,ratio),
